@@ -15,6 +15,52 @@
     referrerpolicy="no-referrer" />
 </head>
 <body>
+  <!-- Add New Task Modal -->
+<div class="modal fade" id="AddNewModal" tabindex="-1" aria-labelledby="AddNewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="AddNewModalLabel">Add New Task</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="ImageURL" class="form-label">Image URL</label>
+            <input type="url" class="form-control" id="ImageURL" aria-describedby="URLHelp" placeholder="https://www.rohankinnal.com/">
+            <div id="URLHelp" class="form-text">Its a optional filed for you...</div>
+          </div>
+          <div class="mb-3">
+            <label for="TaskTitle" class="form-label">Task Title</label>
+            <input type="text" class="form-control" id="TaskTitle" placeholder="Enter the Task Title">
+          </div>
+          <div class="mb-3">
+            <label for="TaskType" class="form-label">Task Type</label>
+            <input type="text" class="form-control" id="TaskType" placeholder="Enter the Task Type">
+          </div>
+          <div class="mb-3">
+            <label for="TaskDescription" class="form-label">Task Description</label>
+            <textarea class="form-control" id="TaskDescription" placeholder="Enter the Task Description"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add new model's mobile version -->
+ <div class="addNewMobilev">
+  
+   <button class="btn btn-primary d-flex gap-2 align-items-center" 
+               data-bs-toggle="modal" 
+               data-bs-target="#AddNewModal" 
+               type="button"><i class="fa-solid fa-plus"></i>Add New Task</button>
+ </div>
+
     <!--Navbar  -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -28,7 +74,10 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
             </ul>
-            <button class="btn btn-primary d-flex gap-2 align-items-center" type="button"><i class="fa-solid fa-plus"></i>Add New Task</button>
+            <button class="btn btn-primary d-flex gap-2 align-items-center" 
+            data-bs-toggle="modal" 
+            data-bs-target="#AddNewModal" 
+            type="button"><i class="fa-solid fa-plus"></i>Add New Task</button>
           </div>
         </div>
       </nav>
@@ -41,6 +90,12 @@
                 <span class="input-group-text" id="search_task"><i class="fa-solid fa-magnifying-glass"></i></span>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section class="mt-5">
+          <div class="row task_contents">
+            <h5>Dynamic Contents</h5>
           </div>
         </section>
       </div>
